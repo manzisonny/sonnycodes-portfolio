@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --accent-purple: #6C63FF;
+  --accent-cyan: #00D4FF;
+  --accent-gold: #F5A623;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0B0;
+  --text-muted: #5A5A6A;
+  --border: rgba(255, 255, 255, 0.08);
+  --glow-purple: rgba(108, 99, 255, 0.3);
+  --glow-cyan: rgba(0, 212, 255, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-text-primary font-inter antialiased;
+    background-color: var(--bg-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-space font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-glass border border-border backdrop-blur-xl rounded-2xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-purple to-accent-cyan;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-accent-purple text-white rounded-lg font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-accent-purple/20;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 glass text-white font-semibold transition-all hover:bg-white/10 active:scale-95;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full hover:bg-text-muted transition-colors;
+}
+
+/* Animations */
+.animate-glow {
+  box-shadow: 0 0 20px var(--glow-purple);
+}
+
+.pulse-purple {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .8;
+    transform: scale(1.05);
+  }
+}
