@@ -26,11 +26,12 @@ export default function HomePage() {
       <section className="flex flex-col lg:flex-row items-center gap-12 pt-12">
         <div className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-accent-purple to-accent-cyan rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-border bg-secondary">
-            {/* Placeholder for Sonny's Photo */}
-            <div className="w-full h-full flex items-center justify-center text-4xl font-space font-bold text-accent-purple">
-              SC
-            </div>
+          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-border bg-secondary shadow-2xl shadow-accent-purple/20">
+            <img 
+              src="/sonny_profile_professional_1778163643348.png" 
+              alt="Sonny Codes" 
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
           </div>
         </div>
         <div className="text-center lg:text-left flex-1">
