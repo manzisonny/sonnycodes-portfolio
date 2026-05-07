@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { CheckCircle2, AlertCircle, Rocket } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
@@ -109,13 +108,33 @@ export function CollabForm() {
         </div>
       </div>
 
+      {status === "error" && (
+        <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-medium">
+          <AlertCircle size={18} className="shrink-0" />
+          <span>Something went wrong. Please check your connection and try again, or reach out via WhatsApp.</span>
+        </div>
+      )}
+
       <button
-        disabled={status === "loading"}
+        type="submit"
+        disabled={status === "loading" || status === "success"}
         className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${
-          status === "success" ? "bg-green-500 text-white" : "bg-accent-cyan text-primary hover:scale-[1.02]"
+          status === "success"
+            ? "bg-green-500 text-white cursor-not-allowed"
+            : status === "error"
+            ? "bg-red-500/20 border border-red-500/30 text-red-400 hover:bg-red-500/30"
+            : "bg-accent-cyan text-primary hover:scale-[1.02]"
         }`}
       >
-        {status === "loading" ? "Submitting..." : status === "success" ? "Request Received!" : <><Rocket size={18} /> Propose Collaboration</>}
+        {status === "loading" ? (
+          <><div className="w-5 h-5 border-2 border-primary/30 border-t-primary rounded-full animate-spin" /> Submitting...</>
+        ) : status === "success" ? (
+          <><CheckCircle2 size={18} /> Collaboration Request Sent!</>
+        ) : status === "error" ? (
+          <><AlertCircle size={18} /> Try Again</>        
+        ) : (
+          <><Rocket size={18} /> Propose Collaboration</>
+        )}
       </button>
     </form>
   );

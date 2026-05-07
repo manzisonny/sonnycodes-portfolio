@@ -78,8 +78,15 @@ export default function CommunicatePage() {
               
               <div className="aspect-video bg-white/5 border border-border rounded-2xl flex flex-col items-center justify-center p-12">
                 <Calendar size={64} className="text-accent-purple mb-6 opacity-20" />
-                <p className="text-text-muted mb-8 italic">Calendly / Cal.com widget integration</p>
-                <button className="btn-primary">Connect your Calendar</button>
+                <p className="text-text-muted mb-8 italic">Direct booking via WhatsApp or Email</p>
+                <div className="flex flex-wrap gap-4 justify-center">
+                  <a href="https://wa.me/250791385768" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center gap-2">
+                    <MessageSquare size={18} /> WhatsApp Booking
+                  </a>
+                  <a href="mailto:manzisonny81@gmail.com" className="btn-secondary flex items-center gap-2">
+                    <Mail size={18} /> Email Schedule
+                  </a>
+                </div>
               </div>
               
               <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">

@@ -101,13 +101,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* GitHub Activity Placeholder */}
-      <section className="glass p-8 text-center">
-        <h2 className="text-2xl font-space mb-6">GitHub Activity</h2>
-        <div className="h-48 flex items-center justify-center border-2 border-dashed border-border rounded-xl">
-          <p className="text-text-muted">Live Activity Feed (Personal &amp; Company) goes here.</p>
-        </div>
-      </section>
+      {/* GitHub Activity removed — will be added when live data is available */}
     </div>
   );
 }

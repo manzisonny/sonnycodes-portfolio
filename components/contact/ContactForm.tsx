@@ -192,22 +192,30 @@ export function ContactForm() {
         />
       </div>
 
+      {status === "error" && (
+        <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-medium">
+          <AlertCircle size={18} className="shrink-0" />
+          <span>Failed to send message. Please check your connection or try reaching out via WhatsApp directly.</span>
+        </div>
+      )}
+
       <button
-        disabled={status === "loading"}
+        type="submit"
+        disabled={status === "loading" || status === "success"}
         className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${
           status === "success" 
-            ? "bg-green-500 text-white" 
+            ? "bg-green-500 text-white cursor-not-allowed" 
             : status === "error" 
-              ? "bg-red-500 text-white" 
+              ? "bg-red-500/20 border border-red-500/30 text-red-400 hover:bg-red-500/30" 
               : "btn-primary"
         }`}
       >
         {status === "loading" ? (
-          <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+          <><div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Sending...</>
         ) : status === "success" ? (
-          <><CheckCircle2 /> Message Sent!</>
+          <><CheckCircle2 size={18} /> Message Sent Successfully!</>
         ) : status === "error" ? (
-          <><AlertCircle /> Error Sending</>
+          <><AlertCircle size={18} /> Try Again</>
         ) : (
           <><Send size={18} /> Send Message</>
         )}
