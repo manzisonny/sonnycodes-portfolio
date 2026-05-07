@@ -15,7 +15,7 @@ import {
   Linkedin, 
   Twitter 
 } from "lucide-react";
-import { cn } from "@/app/layout";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "Home", href: "/home", icon: Home },

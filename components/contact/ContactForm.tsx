@@ -2,8 +2,99 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, CheckCircle2, AlertCircle } from "lucide-react";
+import {
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  Mail,
+  Linkedin,
+  Twitter,
+  MessageSquare,
+  Github,
+  LucideIcon,
+} from "lucide-react";
 import { supabase } from "@/lib/supabase";
+
+// ─── SocialLinks (self-contained, no function props from server) ─────────────
+
+const socialCards: {
+  name: string;
+  value: string;
+  href: string;
+  icon: LucideIcon;
+  color: string;
+}[] = [
+  {
+    name: "Email",
+    value: "manzisonny81@gmail.com",
+    href: "mailto:manzisonny81@gmail.com",
+    icon: Mail,
+    color: "text-red-400",
+  },
+  {
+    name: "LinkedIn",
+    value: "/in/manzi-sonny-034566408",
+    href: "https://www.linkedin.com/in/manzi-sonny-034566408/",
+    icon: Linkedin,
+    color: "text-blue-400",
+  },
+  {
+    name: "Twitter/X",
+    value: "@sonny_manzi73001",
+    href: "https://twitter.com/sonny_manzi73001",
+    icon: Twitter,
+    color: "text-sky-400",
+  },
+  {
+    name: "WhatsApp",
+    value: "+250 791385768",
+    href: "https://wa.me/250791385768",
+    icon: MessageSquare,
+    color: "text-green-400",
+  },
+  {
+    name: "GitHub",
+    value: "manzisonny",
+    href: "https://github.com/manzisonny",
+    icon: Github,
+    color: "text-white",
+  },
+];
+
+export function SocialLinks() {
+  return (
+    <div className="grid grid-cols-1 gap-4">
+      {socialCards.map((social) => {
+        const Icon = social.icon;
+        return (
+          <a
+            key={social.name}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass p-6 flex items-center gap-6 group hover:border-accent-purple/50 transition-all"
+          >
+            <div
+              className={`p-4 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform ${social.color}`}
+            >
+              <Icon size={28} />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-text-muted uppercase tracking-widest mb-1">
+                {social.name}
+              </p>
+              <p className="text-lg font-space group-hover:text-accent-purple transition-colors">
+                {social.value}
+              </p>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  );
+}
+
+
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");

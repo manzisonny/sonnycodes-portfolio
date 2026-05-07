@@ -1,28 +1,40 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { School, Terminal, Rocket, Cpu } from "lucide-react";
+import { motion } from "framer-motion";
+import { School, Terminal, Cpu, LucideIcon } from "lucide-react";
 
-const milestones = [
+interface Milestone {
+  year: string;
+  title: string;
+  description: string;
+  IconComponent: LucideIcon;
+  iconColor: string;
+  isTerminal?: boolean;
+  stats?: string[];
+}
+
+const milestones: Milestone[] = [
   {
     year: "2019",
     title: "It started in high school...",
     description: "Software was just another subject — until the day I built something simple and it actually worked. That moment changed everything.",
-    icon: <School className="text-accent-purple" size={32} />,
+    IconComponent: School,
+    iconColor: "text-accent-purple",
   },
   {
     year: "2022",
     title: "Then something clicked.",
     description: "I had big ideas but no skills, and that gap became my obsession. I started building real-world projects, line by line.",
-    icon: <Terminal className="text-accent-cyan" size={32} />,
+    IconComponent: Terminal,
+    iconColor: "text-accent-cyan",
     isTerminal: true,
   },
   {
     year: "Today",
     title: "Ideas with no skills — a dangerous gap.",
     description: "For nearly 5 years I've been closing it. Today, coding isn't just what I do. It's how I think.",
-    icon: <Cpu className="text-accent-purple" size={32} />,
+    IconComponent: Cpu,
+    iconColor: "text-accent-purple",
     stats: ["847+ commits", "3 years", "15+ projects"],
   },
 ];
@@ -54,7 +66,7 @@ export default function StorySection() {
               <div className="flex-1">
                 <div className="glass p-8 border-l-4 border-l-accent-purple relative overflow-hidden group">
                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    {milestone.icon}
+                    <milestone.IconComponent size={32} className={milestone.iconColor} />
                   </div>
                   <span className="inline-block px-3 py-1 bg-accent-purple/20 text-accent-purple text-sm font-bold rounded-full mb-4">
                     {milestone.year}
@@ -92,7 +104,7 @@ export default function StorySection() {
                 />
                 <div className="p-4 bg-secondary rounded-2xl border border-border shadow-2xl">
                    {/* Abstract illustration/icon */}
-                   {milestone.icon}
+                   <milestone.IconComponent size={32} className={milestone.iconColor} />
                 </div>
               </div>
             </motion.div>
