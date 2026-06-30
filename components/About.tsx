@@ -218,7 +218,7 @@ export default function About() {
           {/* Card 6: Beyond the Code (Hobby & Outdoor photo) */}
           <motion.div
             variants={cardVariants}
-            className="lg:col-span-12 glass border-border flex flex-col md:flex-row overflow-hidden group min-h-[200px]"
+            className="lg:col-span-12 glass border-border flex flex-col md:flex-row overflow-hidden group min-h-[350px]"
           >
             <div className="p-8 md:w-1/2 flex flex-col justify-center">
               <div className="flex items-center gap-2 text-accent-gold mb-4">
@@ -227,18 +227,18 @@ export default function About() {
                   Beyond Coding
                 </h3>
               </div>
-              <p className="text-text-secondary text-sm leading-relaxed max-w-md">
+              <p className="text-text-secondary text-base leading-relaxed max-w-md">
                 When I'm not coding, I'm exploring Rwanda's beautiful landscapes,
                 supporting local tech communities, and enjoying outdoor sports. A healthy 
                 balance between the digital world and nature fuels my creativity.
               </p>
             </div>
-            <div className="relative md:w-1/2 h-[250px] md:h-auto border-t md:border-t-0 md:border-l border-border overflow-hidden">
+            <div className="relative md:w-1/2 h-[300px] md:h-auto border-t md:border-t-0 md:border-l border-border overflow-hidden">
               <Image
                 src="/images/sonny-outdoor.jpg"
                 alt="Outdoor Hobbies"
                 fill
-                className="object-cover object-[center_60%] transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
