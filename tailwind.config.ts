@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#030305",
-        secondary: "#0a0a0f",
+        primary: "var(--bg-primary)",
+        secondary: "var(--bg-secondary)",
         accent: {
           purple: "#6260FF", // Periwinkle
           lavender: "#E4E4FF", // Lavender
@@ -18,12 +19,12 @@ const config: Config = {
           gold: "#F5A623",
         },
         text: {
-          primary: "#F8FAFC",
-          secondary: "#94A3B8",
-          muted: "#475569",
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          muted: "var(--text-muted)",
         },
-        glass: "rgba(255, 255, 255, 0.02)",
-        border: "rgba(255, 255, 255, 0.08)",
+        glass: "var(--bg-card)",
+        border: "var(--border)",
       },
       fontFamily: {
         space: ["var(--font-space-grotesk)", "sans-serif"],

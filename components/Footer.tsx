@@ -19,7 +19,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/5 bg-secondary/20 py-12">
+    <footer className="border-t border-border bg-secondary/20 py-12">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Left copyright */}
         <div className="flex flex-col items-center md:items-start gap-1">
@@ -36,28 +36,28 @@ export default function Footer() {
           <a
             href="#about"
             onClick={(e) => scrollTo(e, "about")}
-            className="hover:text-white transition-colors"
+            className="hover:text-text-primary transition-colors"
           >
             About
           </a>
           <a
             href="#projects"
             onClick={(e) => scrollTo(e, "projects")}
-            className="hover:text-white transition-colors"
+            className="hover:text-text-primary transition-colors"
           >
             Projects
           </a>
           <a
             href="#skills"
             onClick={(e) => scrollTo(e, "skills")}
-            className="hover:text-white transition-colors"
+            className="hover:text-text-primary transition-colors"
           >
             Skills
           </a>
           <a
             href="#contact"
             onClick={(e) => scrollTo(e, "contact")}
-            className="hover:text-white transition-colors"
+            className="hover:text-text-primary transition-colors"
           >
             Contact
           </a>

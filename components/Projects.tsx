@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, Code, Server, AppWindow } from "lucide-react";
-import { projects, Project } from "@/lib/data";
+import { projects } from "@/lib/data";
 
 export default function Projects() {
   const [filter, setFilter] = useState<"all" | "personal" | "company" | "client">("all");
@@ -33,14 +33,14 @@ export default function Projects() {
             <p className="text-xs font-bold uppercase tracking-widest text-accent-purple mb-2">
               02 / Portfolio
             </p>
-            <h2 className="text-3xl md:text-4xl font-space font-extrabold text-white">
+            <h2 className="text-3xl md:text-4xl font-space font-extrabold text-text-primary">
               Featured Work
             </h2>
             <div className="w-12 h-[3px] bg-gradient-to-r from-accent-purple to-accent-cyan rounded-full mt-4" />
           </div>
 
           {/* Filtering tabs */}
-          <div className="flex flex-wrap gap-2 bg-secondary/80 border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
+          <div className="flex flex-wrap gap-2 bg-secondary border border-border p-1.5 rounded-xl backdrop-blur-md">
             {(["all", "company", "client", "personal"] as const).map((tab) => (
               <button
                 key={tab}
@@ -48,7 +48,7 @@ export default function Projects() {
                 className={`px-4 py-2 rounded-lg text-xs font-medium uppercase tracking-wider transition-all duration-300 ${
                   filter === tab
                     ? "bg-gradient-to-r from-accent-purple to-[#837dff] text-white shadow-md shadow-accent-purple/10"
-                    : "text-text-secondary hover:text-white"
+                    : "text-text-secondary hover:text-text-primary"
                 }`}
               >
                 {tab}
@@ -71,7 +71,7 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 key={project.id}
-                className="glass border-white/5 p-6 rounded-2xl flex flex-col justify-between group hover:border-accent-purple/20 transition-all duration-300 relative overflow-hidden h-full"
+                className="glass border-border p-6 rounded-2xl flex flex-col justify-between group hover:border-accent-purple/20 transition-all duration-300 relative overflow-hidden h-full"
               >
                 {/* Background glow hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/0 to-accent-cyan/0 group-hover:from-accent-purple/[0.02] group-hover:to-accent-cyan/[0.02] transition-colors duration-500 pointer-events-none" />
@@ -79,7 +79,7 @@ export default function Projects() {
                 <div>
                   {/* Card Header */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/5 text-[10px] font-bold uppercase tracking-wider text-text-secondary">
+                    <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary border border-border text-[10px] font-bold uppercase tracking-wider text-text-secondary">
                       {getCategoryIcon(project.category)}
                       {project.category}
                     </span>
@@ -89,7 +89,7 @@ export default function Projects() {
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl font-space font-bold text-white mb-2 group-hover:text-accent-lavender transition-colors">
+                  <h3 className="text-xl font-space font-bold text-text-primary mb-2 group-hover:text-accent-purple dark:group-hover:text-accent-lavender transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-text-secondary text-xs leading-relaxed mb-6">
@@ -103,7 +103,7 @@ export default function Projects() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="text-[10px] px-2 py-0.5 rounded bg-white/[0.02] border border-white/5 text-text-secondary"
+                        className="text-[10px] px-2 py-0.5 rounded bg-secondary border border-border text-text-secondary"
                       >
                         {tech}
                       </span>
@@ -111,12 +111,12 @@ export default function Projects() {
                   </div>
 
                   {/* Links footer */}
-                  <div className="flex items-center gap-4 border-t border-white/5 pt-4">
+                  <div className="flex items-center gap-4 border-t border-border pt-4">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-text-secondary hover:text-white transition-colors group/link"
+                      className="flex items-center gap-1.5 text-xs text-text-secondary hover:text-text-primary transition-colors group/link"
                     >
                       <Github size={14} />
                       <span>Code</span>
@@ -126,7 +126,7 @@ export default function Projects() {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs text-text-secondary hover:text-white transition-colors group/link"
+                        className="flex items-center gap-1.5 text-xs text-text-secondary hover:text-text-primary transition-colors group/link"
                       >
                         <ExternalLink size={14} />
                         <span>Live Demo</span>

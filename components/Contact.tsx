@@ -39,14 +39,14 @@ function SourceSelect({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full bg-white/5 border border-white/5 rounded-xl px-4 py-4 flex items-center justify-between hover:border-accent-purple/50 transition-all text-white group"
+        className="w-full bg-secondary border border-border rounded-xl px-4 py-4 flex items-center justify-between hover:border-accent-purple/50 transition-all text-text-primary group"
       >
-        <span className={value ? "text-white" : "text-text-muted"}>
+        <span className={value ? "text-text-primary" : "text-text-muted"}>
           {value || "Select an option"}
         </span>
         <ChevronDown
           size={16}
-          className={`text-text-secondary group-hover:text-white transition-transform ${
+          className={`text-text-secondary group-hover:text-text-primary transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -58,7 +58,7 @@ function SourceSelect({
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 5 }}
-            className="absolute z-50 w-full mt-2 bg-[#0a0a0f] border border-white/10 rounded-xl shadow-2xl overflow-hidden backdrop-blur-xl"
+            className="absolute z-50 w-full mt-2 bg-secondary border border-border rounded-xl shadow-2xl overflow-hidden backdrop-blur-xl"
           >
             {options.map((opt) => (
               <button
@@ -68,7 +68,7 @@ function SourceSelect({
                   onChange(opt);
                   setIsOpen(false);
                 }}
-                className="w-full px-4 py-3.5 text-left text-xs font-medium text-text-secondary hover:bg-accent-purple/10 hover:text-white transition-colors border-b border-white/5 last:border-0"
+                className="w-full px-4 py-3.5 text-left text-xs font-medium text-text-secondary hover:bg-accent-purple/10 hover:text-text-primary transition-colors border-b border-border last:border-0"
               >
                 {opt}
               </button>
@@ -126,28 +126,28 @@ export default function Contact() {
       name: "WhatsApp",
       value: "+250 791 385 768",
       href: personalInfo.social.whatsapp,
-      icon: <MessageSquare size={20} className="text-emerald-400" />,
+      icon: <MessageSquare size={20} className="text-emerald-500" />,
       hoverColor: "hover:border-emerald-500/30",
     },
     {
       name: "LinkedIn",
       value: "Munyurangabo Manzi Sonny",
       href: personalInfo.social.linkedin,
-      icon: <Linkedin size={20} className="text-blue-400" />,
+      icon: <Linkedin size={20} className="text-blue-500" />,
       hoverColor: "hover:border-blue-500/30",
     },
     {
       name: "GitHub",
       value: "manzisonny",
       href: personalInfo.social.github,
-      icon: <Github size={20} className="text-white" />,
-      hoverColor: "hover:border-white/20",
+      icon: <Github size={20} className="text-text-primary" />,
+      hoverColor: "hover:border-accent-purple/30",
     },
     {
       name: "Email",
       value: personalInfo.email,
       href: personalInfo.social.email,
-      icon: <Mail size={20} className="text-red-400" />,
+      icon: <Mail size={20} className="text-red-500" />,
       hoverColor: "hover:border-red-500/30",
     },
   ];
@@ -160,7 +160,7 @@ export default function Contact() {
           <p className="text-xs font-bold uppercase tracking-widest text-accent-purple mb-2">
             04 / Connection
           </p>
-          <h2 className="text-3xl md:text-4xl font-space font-extrabold text-white">
+          <h2 className="text-3xl md:text-4xl font-space font-extrabold text-text-primary">
             Get In Touch
           </h2>
           <div className="w-12 h-[3px] bg-gradient-to-r from-accent-purple to-accent-cyan rounded-full mt-4" />
@@ -169,11 +169,11 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Form Info */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="glass p-6 border-white/5 relative overflow-hidden group">
+            <div className="glass p-6 border-border relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-20 h-20 bg-accent-purple/5 blur-xl" />
               <div className="flex items-center gap-3 text-accent-purple mb-4">
                 <Calendar size={18} />
-                <h3 className="font-space font-bold text-sm text-white">
+                <h3 className="font-space font-bold text-sm text-text-primary">
                   Availability & Consultations
                 </h3>
               </div>
@@ -192,14 +192,14 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className={`glass p-5 flex flex-col gap-3 group transition-all duration-300 ${social.hoverColor}`}
                 >
-                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <div className="w-8 h-8 rounded-lg bg-secondary border border-border flex items-center justify-center group-hover:scale-105 transition-transform">
                     {social.icon}
                   </div>
                   <div>
                     <h4 className="text-[10px] font-bold uppercase tracking-wider text-text-muted">
                       {social.name}
                     </h4>
-                    <p className="text-xs text-white font-medium truncate mt-0.5">
+                    <p className="text-xs text-text-primary font-medium truncate mt-0.5">
                       {social.value}
                     </p>
                   </div>
@@ -210,7 +210,7 @@ export default function Contact() {
 
           {/* Right Column: Form Submission */}
           <div className="lg:col-span-7">
-            <div className="glass p-8 border-white/5 relative">
+            <div className="glass p-8 border-border relative">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -223,7 +223,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="John Doe"
-                      className="w-full bg-white/5 border border-white/5 rounded-xl px-4 py-4 focus:outline-none focus:border-accent-purple/50 transition-all text-white placeholder:text-text-muted text-sm"
+                      className="w-full bg-secondary border border-border rounded-xl px-4 py-4 focus:outline-none focus:border-accent-purple/50 transition-all text-text-primary placeholder:text-text-muted text-sm"
                     />
                   </div>
                   <div className="space-y-2">
@@ -236,7 +236,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="john@example.com"
-                      className="w-full bg-white/5 border border-white/5 rounded-xl px-4 py-4 focus:outline-none focus:border-accent-purple/50 transition-all text-white placeholder:text-text-muted text-sm"
+                      className="w-full bg-secondary border border-border rounded-xl px-4 py-4 focus:outline-none focus:border-accent-purple/50 transition-all text-text-primary placeholder:text-text-muted text-sm"
                     />
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     placeholder="Project inquiry, consulting offer, etc."
-                    className="w-full bg-white/5 border border-white/5 rounded-xl px-4 py-4 focus:outline-none focus:border-accent-purple/50 transition-all text-white placeholder:text-text-muted text-sm"
+                    className="w-full bg-secondary border border-border rounded-xl px-4 py-4 focus:outline-none focus:border-accent-purple/50 transition-all text-text-primary placeholder:text-text-muted text-sm"
                   />
                 </div>
 
@@ -281,7 +281,7 @@ export default function Contact() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     placeholder="Describe your goals, tech stack, or ideas..."
-                    className="w-full bg-white/5 border border-white/5 rounded-xl px-4 py-4 focus:outline-none focus:border-accent-purple/50 transition-all text-white resize-none placeholder:text-text-muted text-sm"
+                    className="w-full bg-secondary border border-border rounded-xl px-4 py-4 focus:outline-none focus:border-accent-purple/50 transition-all text-text-primary resize-none placeholder:text-text-muted text-sm"
                   />
                 </div>
 

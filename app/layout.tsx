@@ -14,8 +14,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Sonny Codes | Munyurangabo Manzi Sonny",
-  description: "Personal Portfolio of Sonny Codes - Full Stack Software Engineer from Kigali, Rwanda. Specialist in React, Next.js, and Supabase.",
+  title: "Sonny Dev | Munyurangabo Manzi Sonny",
+  description: "Personal Portfolio of Munyurangabo Manzi Sonny - Full Stack Software Engineer from Kigali, Rwanda. Specialist in Next.js, TypeScript, and Laravel.",
 };
 
 export default function RootLayout({
@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={cn(inter.variable, spaceGrotesk.variable, "bg-primary text-white")}>
+    <html lang="en">
+      <body className={cn(inter.variable, spaceGrotesk.variable, "bg-primary text-text-primary")}>
         {children}
       </body>
     </html>
