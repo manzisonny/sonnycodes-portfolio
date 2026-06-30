@@ -78,7 +78,7 @@ export default function Navbar() {
               src="/images/sonny-casual.jpg"
               alt={personalInfo.name}
               fill
-              className="object-cover"
+              className="object-cover object-[center_top]"
               sizes="40px"
             />
           </div>

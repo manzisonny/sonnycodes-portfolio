@@ -175,7 +175,7 @@ export default function Hero() {
                 alt="Manzi Sonny"
                 fill
                 priority
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-[center_top] transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 380px"
               />
               {/* Overlay Gradient shadow */}

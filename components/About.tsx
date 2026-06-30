@@ -49,7 +49,7 @@ export default function About() {
           {/* Card 1: Main Bio (Large) */}
           <motion.div
             variants={cardVariants}
-            className="lg:col-span-8 glass p-8 border-border relative overflow-hidden flex flex-col justify-between group"
+            className="lg:col-span-7 glass p-8 border-border relative overflow-hidden flex flex-col justify-between group"
           >
             <div className="absolute top-0 right-0 w-24 h-24 bg-accent-purple/5 blur-2xl group-hover:bg-accent-purple/10 transition-colors" />
             <div>
@@ -104,7 +104,22 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Card 2: Workspace Coding Photo (Vertical) */}
+          {/* Card 2: New Photo */}
+          <motion.div
+            variants={cardVariants}
+            className="lg:col-span-5 rounded-2xl border border-border overflow-hidden relative group min-h-[350px] shadow-lg"
+          >
+            <Image
+              src="/images/sonny-new-about.png"
+              alt="Manzi Sonny Portrait"
+              fill
+              className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 40vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+          </motion.div>
+
+          {/* Card 3: Workspace Coding Photo (Vertical) */}
           <motion.div
             variants={cardVariants}
             className="lg:col-span-4 rounded-2xl border border-border overflow-hidden relative group min-h-[300px] shadow-lg"
@@ -113,7 +128,7 @@ export default function About() {
               src="/images/sonny-coding.jpg"
               alt="Sonny Coding"
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85" />
@@ -127,29 +142,27 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Card 3: Location / Rwandan Pride (Jersey photo) */}
+          {/* Card 4: Location / Rwandan Pride (Jersey photo) */}
           <motion.div
             variants={cardVariants}
-            className="lg:col-span-5 rounded-2xl border border-border overflow-hidden relative group min-h-[280px] shadow-lg"
+            className="lg:col-span-4 rounded-2xl border border-border overflow-hidden relative group min-h-[300px] shadow-lg"
           >
             <Image
               src="/images/sonny-rwanda.png"
               alt="Sonny in Rwandan Jersey"
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent opacity-90" />
-            <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-              <div>
-                <div className="flex items-center gap-1.5 text-accent-cyan text-xs font-semibold mb-1">
-                  <MapPin size={12} className="text-accent-purple" />
-                  Kigali, Rwanda
-                </div>
-                <p className="text-white font-space font-bold text-lg">
-                  Based in the heart of East Africa
-                </p>
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col items-start">
+              <div className="flex items-center gap-1.5 text-accent-cyan text-xs font-semibold mb-1">
+                <MapPin size={12} className="text-accent-purple" />
+                Kigali, Rwanda
               </div>
+              <p className="text-white font-space font-bold text-lg mb-3">
+                Based in the heart of East Africa
+              </p>
               <div className="w-10 h-6 relative rounded overflow-hidden border border-white/10 flex-shrink-0">
                 <div className="absolute top-0 inset-x-0 h-[40%] bg-[#00A3E0]" />
                 <div className="absolute top-[40%] inset-x-0 h-[30%] bg-[#FAD201]" />
@@ -158,10 +171,10 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Card 4: Values & Core Beliefs */}
+          {/* Card 5: Values & Core Beliefs */}
           <motion.div
             variants={cardVariants}
-            className="lg:col-span-4 glass p-8 border-border flex flex-col justify-between group"
+            className="lg:col-span-4 glass p-8 border-border flex flex-col justify-between group min-h-[300px]"
           >
             <div>
               <div className="flex items-center gap-3 text-accent-cyan mb-6">
@@ -172,7 +185,7 @@ export default function About() {
               </div>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-purple mt-2" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent-purple mt-2 shrink-0" />
                   <div>
                     <h4 className="text-sm font-bold text-text-primary">Integrity First</h4>
                     <p className="text-xs text-text-secondary mt-0.5">
@@ -181,7 +194,7 @@ export default function About() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
                   <div>
                     <h4 className="text-sm font-bold text-text-primary">Consistency</h4>
                     <p className="text-xs text-text-secondary mt-0.5">
@@ -190,7 +203,7 @@ export default function About() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-gold mt-2" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent-gold mt-2 shrink-0" />
                   <div>
                     <h4 className="text-sm font-bold text-text-primary">Faith Driven</h4>
                     <p className="text-xs text-text-secondary mt-0.5">
@@ -202,30 +215,31 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Card 5: Beyond the Code (Hobby & Outdoor photo) */}
+          {/* Card 6: Beyond the Code (Hobby & Outdoor photo) */}
           <motion.div
             variants={cardVariants}
-            className="lg:col-span-3 glass p-6 border-border flex flex-col justify-between group"
+            className="lg:col-span-12 glass border-border flex flex-col md:flex-row overflow-hidden group min-h-[200px]"
           >
-            <div>
+            <div className="p-8 md:w-1/2 flex flex-col justify-center">
               <div className="flex items-center gap-2 text-accent-gold mb-4">
                 <Heart size={18} />
-                <h3 className="font-space font-bold text-sm text-text-primary">
+                <h3 className="font-space font-bold text-lg text-text-primary">
                   Beyond Coding
                 </h3>
               </div>
-              <p className="text-text-secondary text-xs leading-relaxed">
+              <p className="text-text-secondary text-sm leading-relaxed max-w-md">
                 When I'm not coding, I'm exploring Rwanda's beautiful landscapes,
-                supporting local tech communities, and enjoying outdoor sports.
+                supporting local tech communities, and enjoying outdoor sports. A healthy 
+                balance between the digital world and nature fuels my creativity.
               </p>
             </div>
-            <div className="relative w-full h-[110px] rounded-xl overflow-hidden mt-4 shadow-md">
+            <div className="relative md:w-1/2 h-[200px] md:h-auto border-t md:border-t-0 md:border-l border-border overflow-hidden">
               <Image
                 src="/images/sonny-outdoor.jpg"
                 alt="Outdoor Hobbies"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 25vw"
+                className="object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </motion.div>

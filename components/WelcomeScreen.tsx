@@ -52,7 +52,7 @@ export default function WelcomeScreen({ onComplete }: { onComplete: () => void }
                     src="/images/sonny-casual.jpg"
                     alt="Manzi Sonny"
                     fill
-                    className="object-cover"
+                    className="object-cover object-[center_top]"
                     priority
                   />
                 </div>
