@@ -113,7 +113,7 @@ export default function About() {
               src="/images/sonny-new-about.png"
               alt="Manzi Sonny Portrait"
               fill
-              className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
@@ -128,7 +128,7 @@ export default function About() {
               src="/images/sonny-coding.jpg"
               alt="Sonny Coding"
               fill
-              className="object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85" />
@@ -151,7 +151,7 @@ export default function About() {
               src="/images/sonny-rwanda.png"
               alt="Sonny in Rwandan Jersey"
               fill
-              className="object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent opacity-90" />
@@ -233,12 +233,12 @@ export default function About() {
                 balance between the digital world and nature fuels my creativity.
               </p>
             </div>
-            <div className="relative md:w-1/2 h-[200px] md:h-auto border-t md:border-t-0 md:border-l border-border overflow-hidden">
+            <div className="relative md:w-1/2 h-[250px] md:h-auto border-t md:border-t-0 md:border-l border-border overflow-hidden">
               <Image
                 src="/images/sonny-outdoor.jpg"
                 alt="Outdoor Hobbies"
                 fill
-                className="object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-[center_60%] transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
