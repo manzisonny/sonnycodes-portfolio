@@ -12,11 +12,35 @@ const config: Config = {
       colors: {
         primary: "var(--bg-primary)",
         secondary: "var(--bg-secondary)",
+        sulu: {
+          DEFAULT: "#9FE870",
+          50: "#f5fdf0",
+          100: "#e7fad9",
+          200: "#d0f5b6",
+          300: "#aee987",
+          400: "#9FE870",
+          500: "#6dc933",
+          600: "#52a322",
+          700: "#3f7c1d",
+          800: "#35621c",
+          900: "#2d521a",
+        },
+        deepfir: {
+          DEFAULT: "#163300",
+          50: "#edfce0",
+          100: "#d6f7b3",
+          200: "#bcef82",
+          300: "#a2e551",
+          400: "#8dd82c",
+          500: "#70bc10",
+          600: "#559409",
+          700: "#406e0a",
+          800: "#34570d",
+          900: "#163300",
+        },
         accent: {
-          purple: "#6260FF", // Periwinkle
-          lavender: "#E4E4FF", // Lavender
-          cyan: "#06B6D4",
-          gold: "#F5A623",
+          primary: "#9FE870",
+          secondary: "#163300",
         },
         text: {
           primary: "var(--text-primary)",

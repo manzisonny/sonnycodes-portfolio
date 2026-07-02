@@ -7,33 +7,29 @@
   --bg-primary: #F8FAFC;
   --bg-secondary: #F1F5F9;
   --bg-card: rgba(0, 0, 0, 0.015);
-  --accent-purple: #6260FF; /* Periwinkle */
-  --accent-lavender: #4f46e5; /* Contrast dark-purple in light mode */
-  --accent-cyan: #0891B2;
-  --accent-gold: #D97706;
+  --accent-primary: #163300; 
+  --accent-secondary: #3f7c1d;
   --text-primary: #0F172A;
   --text-secondary: #475569;
   --text-muted: #64748B;
   --border: rgba(0, 0, 0, 0.08);
-  --glow-purple: rgba(98, 96, 255, 0.05);
-  --glow-cyan: rgba(8, 145, 178, 0.04);
+  --glow-primary: rgba(159, 232, 112, 0.2);
+  --glow-secondary: rgba(22, 51, 0, 0.1);
 }
 
 /* Dark Mode (.dark class) */
 .dark {
-  --bg-primary: #030305;
-  --bg-secondary: #0a0a0f;
-  --bg-card: rgba(255, 255, 255, 0.02);
-  --accent-purple: #6260FF; /* Periwinkle */
-  --accent-lavender: #E4E4FF; /* Lavender */
-  --accent-cyan: #06B6D4;
-  --accent-gold: #F5A623;
+  --bg-primary: #163300; /* Deep Fir */
+  --bg-secondary: #0e2100;
+  --bg-card: rgba(159, 232, 112, 0.03); /* Sulu tint */
+  --accent-primary: #9FE870; /* Sulu */
+  --accent-secondary: #c4f4a3;
   --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #475569;
-  --border: rgba(255, 255, 255, 0.06);
-  --glow-purple: rgba(98, 96, 255, 0.15);
-  --glow-cyan: rgba(6, 182, 212, 0.1);
+  --text-secondary: #bceb93;
+  --text-muted: #85c25a;
+  --border: rgba(159, 232, 112, 0.15);
+  --glow-primary: rgba(159, 232, 112, 0.15);
+  --glow-secondary: rgba(22, 51, 0, 0.5);
 }
 
 @layer base {
@@ -46,9 +42,9 @@
     @apply bg-primary text-text-primary font-inter antialiased transition-colors duration-300;
     background-color: var(--bg-primary);
     background-image: 
-      radial-gradient(at 0% 0%, var(--glow-purple) 0px, transparent 40%),
-      radial-gradient(at 100% 50%, var(--glow-cyan) 0px, transparent 40%),
-      radial-gradient(at 50% 100%, var(--glow-purple) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, var(--glow-primary) 0px, transparent 40%),
+      radial-gradient(at 100% 50%, var(--glow-secondary) 0px, transparent 40%),
+      radial-gradient(at 50% 100%, var(--glow-primary) 0px, transparent 50%);
     background-attachment: fixed;
     overflow-x: hidden;
   }
@@ -69,21 +65,21 @@
   }
 
   .glass-hover {
-    @apply transition-all duration-300 hover:bg-black/[0.03] dark:hover:bg-white/[0.04] hover:border-black/10 dark:hover:border-white/10 hover:shadow-lg hover:shadow-accent-purple/5;
+    @apply transition-all duration-300 hover:bg-black/[0.03] dark:hover:bg-sulu/[0.04] hover:border-black/10 dark:hover:border-sulu/20 hover:shadow-lg hover:shadow-sulu/5;
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-purple via-accent-purple dark:via-accent-lavender to-accent-cyan;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-primary to-white;
     background-size: 200% auto;
     animation: shine 6s linear infinite;
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-accent-purple to-[#837dff] text-white rounded-xl font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-accent-purple/10 flex items-center justify-center gap-2;
+    @apply px-6 py-3 bg-sulu text-deepfir rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-sulu/20 flex items-center justify-center gap-2;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 glass text-text-primary font-medium transition-all hover:bg-black/5 dark:hover:bg-white/5 active:scale-[0.98] border-black/10 dark:border-white/10;
+    @apply px-6 py-3 glass text-text-primary font-medium transition-all hover:bg-black/5 dark:hover:bg-sulu/10 active:scale-[0.98] border-black/10 dark:border-sulu/20;
   }
 }
 
